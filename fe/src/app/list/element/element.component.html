@@ -1,0 +1,14 @@
+<div class="element">
+  <div class="desc">
+    <h3 class="title">{{ data?.title }}</h3>
+    <p class="body">
+      {{ data?.body }}
+    </p>
+  </div>
+  <input
+    type="checkbox"
+    (change)="onChangeRadio($event)"
+    [checked]="data?.done"
+    class="done"
+  />
+</div>

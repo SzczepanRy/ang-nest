@@ -1,0 +1,9 @@
+<main class="list">
+  <div *ngFor="let data of elements; index as i">
+    <list-element
+      (selectedRadio)="changeArr($event)"
+      [data]="data"
+      [index]="i"
+    ></list-element>
+  </div>
+</main>
