@@ -10,19 +10,22 @@ export class ElementComponent {
   radioState: boolean = false;
 
   @Input()
-  data?: ElementI;
+  data!: ElementI;
   @Input()
-  index?: number;
+  index!: number;
+
+  @Output()
+  deleteElement: EventEmitter<number> = new EventEmitter<number>();
 
   @Output()
   selectedRadio: EventEmitter<any> = new EventEmitter<any>();
 
-  onChangeRadio(value: any) {
-    console.log(value.currentTarget.checked);
+  delete(id: number) {
+    this.deleteElement.emit(id);
+  }
 
-    this.radioState = value.currentTarget.checked;
-    console.log(this.radioState);
-
-    this.selectedRadio.emit({ done: this.radioState, index: this.index });
+  onChangeRadio(data: any) {
+    this.radioState = data.done;
+    this.selectedRadio.emit({ done: !data.done, index: this.data.id });
   }
 }

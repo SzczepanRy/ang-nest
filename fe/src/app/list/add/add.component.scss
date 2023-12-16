@@ -1,0 +1,15 @@
+.add {
+  width: 100vw;
+  height: min-content;
+  padding: 20px 0px;
+  background-color: darkgray;
+  display: flex;
+  //   align-items: center;
+  .submit {
+    height: 20px;
+  }
+  justify-content: center;
+  .inputs {
+    width: 300px;
+  }
+}

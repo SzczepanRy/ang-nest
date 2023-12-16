@@ -1,0 +1,23 @@
+<div class="add">
+  <div class="inputs">
+    <input
+      [value]="title"
+      type="text"
+      (input)="changeTitle($event)"
+      class="title"
+    />
+    <div class="body">
+      <textarea
+        [ngStyle]="{ display: showTextarea ? 'block' : 'none' }"
+        (input)="changeBody($event)"
+        [value]="body"
+        name="text"
+        id=""
+        cols="30"
+        rows="10"
+        class="textarea"
+      ></textarea>
+    </div>
+  </div>
+  <button (click)="onSubmit()" type="submit" class="submit">submit</button>
+</div>

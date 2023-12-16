@@ -1,7 +1,11 @@
 <main class="list">
+  <list-search (changedSearch)="filterChange($event)"></list-search>
+  <list-add [elements]="elements" (submit)="updateElements($event)"></list-add>
   <div *ngFor="let data of elements; index as i">
     <list-element
-      (selectedRadio)="changeArr($event)"
+      *ngIf="searchText == '' || data.title.toLowerCase().includes(searchText)"
+      (selectedRadio)="edit($event)"
+      (deleteElement)="delete($event)"
       [data]="data"
       [index]="i"
     ></list-element>
